@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta charset= "utf-8"/>
+	<title> Learn JAVASCRIPT</title>
+	<script type ="text/javascript">
+			function valid (form) {
+				var fail = false;
+				var name = form.name.value;
+				var	pasword = form.pasword.value;
+				var	repasword = form.repasword.value;
+				var	sex = form.sex.value;
+					if (name == "")
+						fail = "You don't put your name";
+					else if (pasword == "" || pasword.height < 5)
+						fail = "You don't put your pasword";
+					else if (repasword != pasword)
+						fail = "Repasword does not ";
+					else if (sex == "")
+						fail = "You don't put your sex";
+					if (fail)
+						alert(fail);
+					else
+						alert("Ready");
+			}	
+		
+	</script>
+	
+	
+</head>
+	<body>
+		<form action="" method="post" name="test" id="form">
+		<label for="name"> Імя: </label>
+		<input type="text" name="name" placeholder="Name" id="name" /> <br/> <br/>
+		<label for="pasword"> Пароль: </label>
+		<input type="pasword" name="pasword" placeholder="Pasword" id="pasword" /> <br> </br>
+		<label for="RePasword"> Перевірка пароля: </label>
+		<input type="pasword" name="RePasword" placeholder="RePasword" id="repasword" /> <br> </br>
+		
+		<span> Стать: </span>
+		<input type="radio" name="sex" id="male" value="Men" /> 
+		<label for="male"> Чоловіча: </label>
+		<input type="radio" name="sex" id="female" value="Women" /> 
+		<label for="female"> Жіноча: </label>
+		<br></br>
+		<input type="button" onclick="valid(document.getElementById('form'))"  name="submit" value="Ready" />
+	</body>
+</html>
